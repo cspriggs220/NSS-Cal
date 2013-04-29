@@ -1,7 +1,7 @@
 <h1>NSS Cal Project</h1>
 <hr>
-<p>This is a project for the Nashville Software School, in which I'm building a Ruby program that can print out the calendar (a la the cal command) of a given month and/or year.</p>
-<h4><em><p>This project is incomplete</p></em></h4>
+<p>This is a project for the Nashville Software School, in which I'm building a Ruby command line program that can print out the calendar (a la the cal command) of a given month and/or year.</p>
+<em><p>This project is incomplete</p></em>
 <hr>
 <h3>Phase 1</h3>
 <ul>
