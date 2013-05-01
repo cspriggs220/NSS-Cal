@@ -20,6 +20,10 @@
   <li><b>month_header method</b> which returns the stringified values of the Cal object centered with accurate spacing on both sides.</li>
   <li><b>days method</b> which contains an array of abbreviated strings representing the days of the week.</li>
   <li><b>days_header method</b> that creates a single string out of the days method array, to be printed with each calendar.</li>
-  <li><b>get_first_of_month method</b> utilizes Zeller's Congruence algorithm to find out which day of the week a month will begin.</li>
+  <li><b>zeller method</b> utilizes Zeller's Congruence algorithm to find out which day of the week a month will begin.</li>
+  <li><b>zeller_to_s method</b> converts the value returned by the zeller method into the cooresponding day's string. Might not use this later, but wrote a test for it nonetheless.</li>
   <li><b>leap_year? method</b> to be utilized in the future when determining if selected Cal object is a leap year.</li>
+  <li><b>numbers_in_month method</b> returns an array of the number of days in the month passed in the Cal constructor.</li>
+  <li><b>blank_space method</b> takes the zeller method's value and returns the appropriate spacing needed for the first week of the printed calendar.</li>
+  <li><b>print_week method</b> is currently built to return the first week's numbers dynamically according to other methods used using the given object's properties.</li>
 </ol>

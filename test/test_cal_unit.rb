@@ -57,12 +57,7 @@ class CalIntegrationTest < Test::Unit::TestCase
     assert_equal false, cal.leap_year?
   end
 
-  def test_16a_first_day_of_the_month_january
-    cal = Cal.new(1, 2013)
-    assert_equal("Tu", cal.zeller_to_s)
-  end
-
-  def test_16b_first_day_of_the_month_january
+  def test_16_first_day_of_the_month_january
     cal = Cal.new(1, 2013)
     assert_equal(3, cal.zeller)
   end
@@ -72,12 +67,7 @@ class CalIntegrationTest < Test::Unit::TestCase
     assert_equal("Mo", cal.zeller_to_s)
   end
 
-  def test_18a_first_day_of_the_month_weekend
-    cal = Cal.new(10, 1803)
-    assert_equal("Sa", cal.zeller_to_s)
-  end
-
-  def test_18b_first_day_of_the_month_weekend
+  def test_18_first_day_of_the_month_weekend
     cal = Cal.new(10, 1803)
     assert_equal(0, cal.zeller)
   end

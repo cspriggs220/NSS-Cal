@@ -71,7 +71,7 @@ class Cal
   end
 
   def blank_space
-    # desired refactored code, but getting NoMethodError
+    # below is desired refactored code, but getting NoMethodError
     # put zeller in order from Sun to Sat
     # if zeller == 0
     #   zeller = 6
