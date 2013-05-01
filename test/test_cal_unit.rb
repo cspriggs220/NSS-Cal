@@ -97,8 +97,8 @@ class CalIntegrationTest < Test::Unit::TestCase
     assert_equal("                   1\n", cal.print_week)
   end
 
-  # def test__print_first_week
-  #   cal = Cal.new(10, 1803)
-  #   assert_equal("                   1\n 2  3  4  5  6  7  8\n", cal.print_week)
-  # end
+  def test__print_first_week
+    cal = Cal.new(10, 1803)
+    assert_equal("                   1\n 2  3  4  5  6  7  8\n", cal.print_week)
+  end
 end
