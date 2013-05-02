@@ -72,33 +72,41 @@ class CalIntegrationTest < Test::Unit::TestCase
     assert_equal(0, cal.zeller)
   end
 
-  def test_19_get_correct_blank_space
+  def test_19a_get_amount_of_nil_units
+    cal = Cal.new(6, 2011)
+    assert_equal([nil,nil,nil], cal.nil_units)
+  end
+
+  def test_19b_get_amount_of_nil_units
     cal = Cal.new(10, 1803)
-    assert_equal("                  ", cal.blank_space)
+    assert_equal([nil,nil,nil,nil,nil,nil], cal.nil_units)
   end
 
-  def test_20_get_correct_blank_space
-    cal = Cal.new(1, 2014)
-    assert_equal("         ", cal.blank_space)
+  def test_20a_get_month_array_with_nil_units
+    cal = Cal.new(2, 2013)
+    assert_equal([nil, nil, nil, nil, nil, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28], cal.month_array_with_nil_units)
   end
 
-  def test_21_print_first_week
-    cal = Cal.new(9, 2013)
-    assert_equal(" 1  2  3  4  5  6  7\n", cal.print_week)
-  end
+  # def test_21_print_first_week
+  #   cal = Cal.new(9, 2013)
+  #   assert_equal(" 1  2  3  4  5  6  7\n", cal.print_week(1))
+  # end
 
-  def test_22_print_first_week
-    cal = Cal.new(9, 2014)
-    assert_equal("    1  2  3  4  5  6\n", cal.print_week)
-  end
+  # def test_22_print_first_week
+  #   cal = Cal.new(9, 2014)
+  #   assert_equal("    1  2  3  4  5  6\n", cal.print_week(1))
+  # end
 
-  def test_23_print_first_week
-    cal = Cal.new(10, 1803)
-    assert_equal("                   1\n", cal.print_week)
-  end
+  # def test_23_print_first_week
+  #   cal = Cal.new(10, 1803)
+  #   assert_equal("                   1\n", cal.print_week(1))
+  # end
 
-  def test__print_first_week
-    cal = Cal.new(10, 1803)
-    assert_equal("                   1\n 2  3  4  5  6  7  8\n", cal.print_week)
-  end
+  # def test_24_print_first_week
+  #   cal = Cal.new(10, 1803)
+  #   assert_equal(" 2  3  4  5  6  7  8\n", cal.print_week(2))
+  # end
+
+
+
 end
