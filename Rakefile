@@ -2,7 +2,7 @@
 # -*- ruby -*-
 
 require 'rake/testtask'
-require 'debugger'
+# require 'debugger'
 Rake::TestTask.new do |t|
  t.libs << 'test'
 end
