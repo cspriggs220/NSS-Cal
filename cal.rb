@@ -1,8 +1,10 @@
 require './cal_integration'
 
-month = ARGV[0]
-year = ARGV[1]
+month = ARGV[0].to_i
+year = ARGV[1].to_i
 
-cal = Cal.new(month.to_i, year.to_i)
-cal.format_calendar
+cal = Cal.new(month, year)
+
+
+puts cal.format_calendar
 

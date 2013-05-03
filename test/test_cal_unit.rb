@@ -62,14 +62,14 @@ class CalIntegrationTest < Test::Unit::TestCase
     assert_equal(3, cal.zeller)
   end
 
-  # def test_17_first_day_of_the_month_february
-  #   cal = Cal.new(2, 2016)
-  #   assert_equal("Mo", cal.zeller_to_s)
-  # end
-
-  def test_18_first_day_of_the_month_weekend
+  def test_17_first_day_of_the_month_weekend
     cal = Cal.new(10, 1803)
     assert_equal(0, cal.zeller)
+  end
+
+  def test_18_get_amount_of_weeks_in_month
+    cal = Cal.new(2, 2037)
+    assert_equal(4, cal.all_weeks_in_month_array.size)
   end
 
   def test_19a_get_amount_of_nil_units

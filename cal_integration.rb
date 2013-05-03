@@ -87,7 +87,7 @@ class Cal
 
   def all_weeks_in_month_array
     month_array_with_nil_units.each_slice(7).to_a
-  end
+  end # given month array with each week in it's own array
 
   def format_month
     month = ""
@@ -99,11 +99,10 @@ class Cal
       month += week
     end
     month
-  end
+  end # a string with the whole month correctly formatted
 
   def format_weeks
     week_total = []
-    # month_array = month_array_with_nil_units.each_slice(7).to_a
     all_weeks_in_month_array.each do |week_array|
       week_array.collect! do |date|
         date.to_s.rjust(2)
@@ -112,22 +111,24 @@ class Cal
       week_total << week
     end
     week_total
-  end
+  end # array of weeks for given month correctly formatted
 
   def get_week (n)
     format_weeks[n-1]
-  end
+  end # returns n week for given month
 
   def format_calendar
     output = month_header
     output << "\n"
     output << days_header + "\n"
-    if all_weeks_in_month_array.size < 6
-      output << format_month + "\n"
-    else
+    if all_weeks_in_month_array.size == 4
+      output << format_month + "\n\n"
+    elsif all_weeks_in_month_array.size == 6
       output << format_month
+    else
+      output << format_month + "\n"
     end
-  end
+  end # returns month fully formatted
 
   # def print_week (week)
   #   if zeller == 0
