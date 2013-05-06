@@ -16,18 +16,16 @@
 </ul>
 <ol>List of Methods used (to this point)
   <li><b>initialize method</b></li>
-  <!-- <li><b>find_month method</b></li> -->
   <li><b>month_header method</b></li>
   <li><b>days_header method</b></li>
   <li><b>zeller method</b></li>
   <li><b>leap_year? method</b></li>
   <li><b>numbers_in_month method</b></li>
-  <li><b>nil_units method</b>replaces blank space before first date of month</li>
+  <li><b>nil_units method</b> replaces blank space before first date of month</li>
   <li><b>month_array_with_nil_units</b></li>
   <li><b>all_weeks_in_month_array</b></li>
   <li><b>format_month</b></li>
   <li><b>format_weeks</b></li>
   <li><b>get_week(n)</b></li>
   <li><b>format_calendar</b></li>
-  <!-- <li><b>print_week method</b></li> -->
 </ol>

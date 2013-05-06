@@ -124,7 +124,7 @@ EOS
     assert_equal(expected, cal.format_calendar)
   end
 
-  def test_25_print_month
+  def test_25_print_six_week_month
     cal = Cal.new(11, 3000)
     expected = <<EOS
    November 3000

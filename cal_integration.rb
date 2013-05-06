@@ -3,18 +3,23 @@ class Cal
 
   attr_reader :month, :year
 
+# ask Jack and/or Melanie about the arguments equal to nil
 
-  def initialize(month, year)
-    raise ArgumentError, "Month was not recognize. Must be between 1..12" if month <= 0 || month > 12
-    @month = month
-    @year = year
+
+  def initialize(month = nil, year = nil)
+    if month && year
+      @month = month
+      @year = year
+      raise ArgumentError, "#{month} was not recognized. Must be between 1..12" if month <= 0 || month > 12
+    # elsif month && year.nil?
+
+    # else
+      # FOR CURRENT MONTH
+      # @month = Time.now.to_i
+      # @year = Time.now.year.to_i
+
+    end
   end
-
-  # def find_month
-    # month = @month
-    # cal_array = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    # cal_array[month-1]
-  # end # used MONTHS constant instead + moved to header
 
   def month_header
     month_name = MONTHS[@month-1]
@@ -22,10 +27,11 @@ class Cal
   end
 
   def days_header
-    %w{Su Mo Tu We Th Fr Sa}.join(" ")
+    "Su Mo Tu We Th Fr Sa"
   end
 
   def zeller
+    # See http://en.wikipedia.org/wiki/Zeller's_congruence for an explanation of Zeller's congruence.
     m = @month
     y = @year
     q = 1
@@ -35,10 +41,6 @@ class Cal
     end
     h = (q + (m+1)*26/10 + y + y/4 + 6*(y/100) + y/400) % 7
   end # 0 = Sa; 1 = Sun; 2 = Mo; 3 = Tu; 4 = We; 5 = Th; 6 = Fr
-
-  # def zeller_to_s
-  #   days_header[zeller]
-  # end # currently unused
 
   def leap_year?
     year = @year
@@ -66,10 +68,6 @@ class Cal
       (1..28).to_a
     end
   end # array of the number of days in the selected month
-
-  # def numbers_joined
-  #   numbers_in_month.join(" ")
-  # end # currently unused
 
   def nil_units
     if zeller == 1
@@ -129,39 +127,5 @@ class Cal
       output << format_month + "\n"
     end
   end # returns month fully formatted
-
-  # def print_week (week)
-  #   if zeller == 0
-  #     upper_range = 0
-  #   else
-  #     upper_range = (7 - zeller)
-  #   end
-  #   if week == 1
-  #     output = " " + blank_space + numbers_in_month[0..upper_range].join("  ") + "\n"
-  #   elsif week == 2
-  #     if zeller == 0
-  #       output = " " + numbers_in_month[(upper_range+1),7].join("  ") + "\n"
-  #     end
-  #   end
-  # increment through the numbers_in_month array,
-  # pulling out the dates for the week,
-  # appending a \n at the end of seven days
-  # until the array is empty
-  # current_day = 0
-  # week = 1
-  # current_week = numbers_in_month[current_day..upper_range].join("  ")
-  # while week <= 2
-  #   if week == 1
-  #     output = " " + blank_space + current_week + "\n"
-  #   else
-  #     current_day = (upper_range + 1)
-  #     upper_range = (current_day + 6)
-  #     current_week = numbers_in_month[current_day..upper_range].join("  ")
-  #     output += " " + current_week + "\n"
-  #   end
-  #   week += 1
-  # end
-  # output
-  # end
 
 end
