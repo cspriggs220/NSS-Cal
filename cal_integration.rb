@@ -3,22 +3,19 @@ class Cal
 
   attr_reader :month, :year
 
-# ask Jack and/or Melanie about the arguments equal to nil
 
 
-  def initialize(month = nil, year = nil)
-    if month && year
-      @month = month
-      @year = year
-      raise ArgumentError, "#{month} was not recognized. Must be between 1..12" if month <= 0 || month > 12
+  def initialize(month, year)  # look into using month = nil, year = nil
+    # if month && year
+    @month = month
+    @year = year
+    raise ArgumentError, "#{month} was not recognized. Must be between 1..12" if month <= 0 || month > 12
     # elsif month && year.nil?
-
     # else
       # FOR CURRENT MONTH
       # @month = Time.now.to_i
       # @year = Time.now.year.to_i
-
-    end
+    # end
   end
 
   def month_header
@@ -69,7 +66,7 @@ class Cal
     end
   end # array of the number of days in the selected month
 
-  def nil_units
+  def nil_blank_space_units
     if zeller == 1
       days = []
     elsif zeller == 0
@@ -80,7 +77,7 @@ class Cal
   end # puts nil in place of blank space for first week of month
 
   def month_array_with_nil_units
-    numbers_in_month.unshift(nil_units).flatten
+    numbers_in_month.unshift(nil_blank_space_units).flatten
   end # single array with correct amount of nil units before days
 
   def all_weeks_in_month_array

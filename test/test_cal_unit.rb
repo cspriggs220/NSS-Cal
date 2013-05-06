@@ -74,12 +74,12 @@ class CalIntegrationTest < Test::Unit::TestCase
 
   def test_19a_get_amount_of_nil_units
     cal = Cal.new(6, 2011)
-    assert_equal([nil,nil,nil], cal.nil_units)
+    assert_equal([nil,nil,nil], cal.nil_blank_space_units)
   end
 
   def test_19b_get_amount_of_nil_units
     cal = Cal.new(10, 1803)
-    assert_equal([nil,nil,nil,nil,nil,nil], cal.nil_units)
+    assert_equal([nil,nil,nil,nil,nil,nil], cal.nil_blank_space_units)
   end
 
   def test_20a_get_month_array_with_nil_units
