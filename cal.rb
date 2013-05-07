@@ -8,3 +8,4 @@ cal = Cal.new(month, year)
 
 puts cal.format_calendar
 
+# write a conditional here that states, if ARGV[1].nil? print CalYear, else print CalMonth
