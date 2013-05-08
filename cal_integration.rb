@@ -17,8 +17,6 @@ class CalMonth
     end
   end
 
-  #Cal::MONTHS
-
   def month_header
     month_name = MONTHS[@month - 1]
     "#{month_name} #{year}".center(20).rstrip
@@ -101,7 +99,7 @@ class CalMonth
     week_total = []
     all_weeks_in_month_array.each do |week_array|
       week_array.collect! { |date| date.to_s.rjust(2) }
-      week = week_array.join(" ") + "\n"
+      week = week_array.join(" ")
       week_total << week
     end
     week_total
