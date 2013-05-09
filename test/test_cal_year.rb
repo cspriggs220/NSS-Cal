@@ -29,10 +29,23 @@ EOS
     assert_equal(expected, cal.days_header)
   end
 
-  def test_29_print_first_week
+  def test_29_print_first_weeks
     cal = CalYear.new(2013)
     expected = <<EOS
        1  2  3  4  5                  1  2                  1  2
+EOS
+    assert_equal(expected, cal.print_weeks)
+  end
+
+  def test_30_print_weeks
+    cal = CalYear.new(2013)
+    expected = <<EOS
+       1  2  3  4  5                  1  2                  1  2
+ 6  7  8  9 10 11 12   3  4  5  6  7  8  9   3  4  5  6  7  8  9
+13 14 15 16 17 18 19  10 11 12 13 14 15 16  10 11 12 13 14 15 16
+20 21 22 23 24 25 26  17 18 19 20 21 22 23  17 18 19 20 21 22 23
+27 28 29 30 31        24 25 26 27 28        24 25 26 27 28 29 30
+                                            31
 EOS
     assert_equal(expected, cal.print_weeks)
   end
