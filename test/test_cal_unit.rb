@@ -105,9 +105,14 @@ EOS
     assert_equal("    1  2  3  4  5  6", cal.get_week(1))
   end
 
-  def test_23_print_sixth_week
+  def test_23a_print_sixth_week
     cal = CalMonth.new(03, 2013)
-    assert_equal("31", cal.get_week(6))
+    assert_equal("31                  ", cal.get_week(6))
+  end
+
+  def test_23b_print_sixth_week
+    cal = CalMonth.new(1, 2013)
+    assert_equal("                    ", cal.get_week(6))
   end
 
   def test_24_print_month

@@ -4,7 +4,7 @@ class CalMonth
 
   attr_reader :month, :year
 
-  def initialize(month = nil, year = nil)
+  def initialize(month, year)
     if month && year
       @month = month
       @year = year
@@ -89,7 +89,7 @@ class CalMonth
     month = ""
     all_weeks_in_month_array.each do |week_array|
       week_array.collect! { | date | date.to_s.rjust(2) }
-      week = week_array.join(" ") + "\n"
+      week = week_array.join(" ").ljust(20).rstrip + "\n"
       month += week
     end
     month
@@ -99,14 +99,18 @@ class CalMonth
     week_total = []
     all_weeks_in_month_array.each do |week_array|
       week_array.collect! { |date| date.to_s.rjust(2) }
-      week = week_array.join(" ")
+      week = week_array.join(" ").ljust(20)
       week_total << week
     end
     week_total
   end
 
   def get_week (n)
-    format_weeks[n - 1]
+    if format_weeks[n - 1] == nil
+      " " * 20
+    else
+      format_weeks[n - 1]
+    end
   end
 
   def format_calendar
