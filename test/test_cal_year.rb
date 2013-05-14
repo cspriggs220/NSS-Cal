@@ -39,114 +39,6 @@ EOS
     assert_equal(expected, cal.days_header)
   end
 
-#   def test_29a_print_3_months
-#     cal = CalYear.new(2013)
-#     expected = <<EOS
-#       January               February               March
-# Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
-#        1  2  3  4  5                  1  2                  1  2
-#  6  7  8  9 10 11 12   3  4  5  6  7  8  9   3  4  5  6  7  8  9
-# 13 14 15 16 17 18 19  10 11 12 13 14 15 16  10 11 12 13 14 15 16
-# 20 21 22 23 24 25 26  17 18 19 20 21 22 23  17 18 19 20 21 22 23
-# 27 28 29 30 31        24 25 26 27 28        24 25 26 27 28 29 30
-#                                             31
-# EOS
-#     assert_equal(expected, cal.format_year)
-#   end
-
-#   def test_29b_print_3_months
-#     cal = CalYear.new(2013)
-#     expected = <<EOS
-#       January               February               March
-# Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
-#        1  2  3  4  5                  1  2                  1  2
-#  6  7  8  9 10 11 12   3  4  5  6  7  8  9   3  4  5  6  7  8  9
-# 13 14 15 16 17 18 19  10 11 12 13 14 15 16  10 11 12 13 14 15 16
-# 20 21 22 23 24 25 26  17 18 19 20 21 22 23  17 18 19 20 21 22 23
-# 27 28 29 30 31        24 25 26 27 28        24 25 26 27 28 29 30
-#                                             31
-#        April                  May                   June
-# Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
-#     1  2  3  4  5  6            1  2  3  4                     1
-#  7  8  9 10 11 12 13   5  6  7  8  9 10 11   2  3  4  5  6  7  8
-# 14 15 16 17 18 19 20  12 13 14 15 16 17 18   9 10 11 12 13 14 15
-# 21 22 23 24 25 26 27  19 20 21 22 23 24 25  16 17 18 19 20 21 22
-# 28 29 30              26 27 28 29 30 31     23 24 25 26 27 28 29
-#                                             30
-# EOS
-#     assert_equal(expected, cal.format_year)
-#   end
-
-#   def test_29c_print_next_3_months
-#     cal = CalYear.new(2013)
-#     expected = <<EOS
-#       January               February               March
-# Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
-#        1  2  3  4  5                  1  2                  1  2
-#  6  7  8  9 10 11 12   3  4  5  6  7  8  9   3  4  5  6  7  8  9
-# 13 14 15 16 17 18 19  10 11 12 13 14 15 16  10 11 12 13 14 15 16
-# 20 21 22 23 24 25 26  17 18 19 20 21 22 23  17 18 19 20 21 22 23
-# 27 28 29 30 31        24 25 26 27 28        24 25 26 27 28 29 30
-#                                             31
-#        April                  May                   June
-# Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
-#     1  2  3  4  5  6            1  2  3  4                     1
-#  7  8  9 10 11 12 13   5  6  7  8  9 10 11   2  3  4  5  6  7  8
-# 14 15 16 17 18 19 20  12 13 14 15 16 17 18   9 10 11 12 13 14 15
-# 21 22 23 24 25 26 27  19 20 21 22 23 24 25  16 17 18 19 20 21 22
-# 28 29 30              26 27 28 29 30 31     23 24 25 26 27 28 29
-#                                             30
-#         July                 August              September
-# Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
-#     1  2  3  4  5  6               1  2  3   1  2  3  4  5  6  7
-#  7  8  9 10 11 12 13   4  5  6  7  8  9 10   8  9 10 11 12 13 14
-# 14 15 16 17 18 19 20  11 12 13 14 15 16 17  15 16 17 18 19 20 21
-# 21 22 23 24 25 26 27  18 19 20 21 22 23 24  22 23 24 25 26 27 28
-# 28 29 30 31           25 26 27 28 29 30 31  29 30
-
-# EOS
-#     assert_equal(expected, cal.format_year)
-#   end
-
-  def test_29d_print_last_3_months
-    cal = CalYear.new(2013)
-    expected = <<EOS
-      January               February               March
-Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
-       1  2  3  4  5                  1  2                  1  2
- 6  7  8  9 10 11 12   3  4  5  6  7  8  9   3  4  5  6  7  8  9
-13 14 15 16 17 18 19  10 11 12 13 14 15 16  10 11 12 13 14 15 16
-20 21 22 23 24 25 26  17 18 19 20 21 22 23  17 18 19 20 21 22 23
-27 28 29 30 31        24 25 26 27 28        24 25 26 27 28 29 30
-                                            31
-       April                  May                   June
-Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
-    1  2  3  4  5  6            1  2  3  4                     1
- 7  8  9 10 11 12 13   5  6  7  8  9 10 11   2  3  4  5  6  7  8
-14 15 16 17 18 19 20  12 13 14 15 16 17 18   9 10 11 12 13 14 15
-21 22 23 24 25 26 27  19 20 21 22 23 24 25  16 17 18 19 20 21 22
-28 29 30              26 27 28 29 30 31     23 24 25 26 27 28 29
-                                            30
-        July                 August              September
-Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
-    1  2  3  4  5  6               1  2  3   1  2  3  4  5  6  7
- 7  8  9 10 11 12 13   4  5  6  7  8  9 10   8  9 10 11 12 13 14
-14 15 16 17 18 19 20  11 12 13 14 15 16 17  15 16 17 18 19 20 21
-21 22 23 24 25 26 27  18 19 20 21 22 23 24  22 23 24 25 26 27 28
-28 29 30 31           25 26 27 28 29 30 31  29 30
-
-      October               November              December
-Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
-       1  2  3  4  5                  1  2   1  2  3  4  5  6  7
- 6  7  8  9 10 11 12   3  4  5  6  7  8  9   8  9 10 11 12 13 14
-13 14 15 16 17 18 19  10 11 12 13 14 15 16  15 16 17 18 19 20 21
-20 21 22 23 24 25 26  17 18 19 20 21 22 23  22 23 24 25 26 27 28
-27 28 29 30 31        24 25 26 27 28 29 30  29 30 31
-
-EOS
-    assert_equal(expected, cal.format_year)
-  end
-
   def test_30_print_formatted_month_header
     cal = CalYear.new(2013)
     expected =
@@ -155,6 +47,53 @@ EOS
 "        July                 August              September\n",
 "      October               November              December\n"]
     assert_equal(expected, cal.format_month_header)
+  end
+
+  def test_31_print_full_year
+    cal = CalYear.new(3000)
+    expected = <<EOS
+                             3000
+
+      January               February               March
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
+          1  2  3  4                     1                     1
+ 5  6  7  8  9 10 11   2  3  4  5  6  7  8   2  3  4  5  6  7  8
+12 13 14 15 16 17 18   9 10 11 12 13 14 15   9 10 11 12 13 14 15
+19 20 21 22 23 24 25  16 17 18 19 20 21 22  16 17 18 19 20 21 22
+26 27 28 29 30 31     23 24 25 26 27 28     23 24 25 26 27 28 29
+                                            30 31
+       April                  May                   June
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
+       1  2  3  4  5               1  2  3   1  2  3  4  5  6  7
+ 6  7  8  9 10 11 12   4  5  6  7  8  9 10   8  9 10 11 12 13 14
+13 14 15 16 17 18 19  11 12 13 14 15 16 17  15 16 17 18 19 20 21
+20 21 22 23 24 25 26  18 19 20 21 22 23 24  22 23 24 25 26 27 28
+27 28 29 30           25 26 27 28 29 30 31  29 30
+                                            
+        July                 August              September
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
+       1  2  3  4  5                  1  2      1  2  3  4  5  6
+ 6  7  8  9 10 11 12   3  4  5  6  7  8  9   7  8  9 10 11 12 13
+13 14 15 16 17 18 19  10 11 12 13 14 15 16  14 15 16 17 18 19 20
+20 21 22 23 24 25 26  17 18 19 20 21 22 23  21 22 23 24 25 26 27
+27 28 29 30 31        24 25 26 27 28 29 30  28 29 30
+                      31                    
+      October               November              December
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
+          1  2  3  4                     1      1  2  3  4  5  6
+ 5  6  7  8  9 10 11   2  3  4  5  6  7  8   7  8  9 10 11 12 13
+12 13 14 15 16 17 18   9 10 11 12 13 14 15  14 15 16 17 18 19 20
+19 20 21 22 23 24 25  16 17 18 19 20 21 22  21 22 23 24 25 26 27
+26 27 28 29 30 31     23 24 25 26 27 28 29  28 29 30 31
+                      30                    
+EOS
+    assert_equal(expected, cal.format_year)
+  end
+
+  def test_32_print_full_year
+    cal = CalYear.new(3000)
+    expected = "                             3000\n\n      January               February               March\nSu Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa\n          1  2  3  4                     1                     1\n 5  6  7  8  9 10 11   2  3  4  5  6  7  8   2  3  4  5  6  7  8\n12 13 14 15 16 17 18   9 10 11 12 13 14 15   9 10 11 12 13 14 15\n19 20 21 22 23 24 25  16 17 18 19 20 21 22  16 17 18 19 20 21 22\n26 27 28 29 30 31     23 24 25 26 27 28     23 24 25 26 27 28 29\n                                            30 31\n       April                  May                   June\nSu Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa\n       1  2  3  4  5               1  2  3   1  2  3  4  5  6  7\n 6  7  8  9 10 11 12   4  5  6  7  8  9 10   8  9 10 11 12 13 14\n13 14 15 16 17 18 19  11 12 13 14 15 16 17  15 16 17 18 19 20 21\n20 21 22 23 24 25 26  18 19 20 21 22 23 24  22 23 24 25 26 27 28\n27 28 29 30           25 26 27 28 29 30 31  29 30\n                                            \n        July                 August              September\nSu Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa\n       1  2  3  4  5                  1  2      1  2  3  4  5  6\n 6  7  8  9 10 11 12   3  4  5  6  7  8  9   7  8  9 10 11 12 13\n13 14 15 16 17 18 19  10 11 12 13 14 15 16  14 15 16 17 18 19 20\n20 21 22 23 24 25 26  17 18 19 20 21 22 23  21 22 23 24 25 26 27\n27 28 29 30 31        24 25 26 27 28 29 30  28 29 30\n                      31                    \n      October               November              December\nSu Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa\n          1  2  3  4                     1      1  2  3  4  5  6\n 5  6  7  8  9 10 11   2  3  4  5  6  7  8   7  8  9 10 11 12 13\n12 13 14 15 16 17 18   9 10 11 12 13 14 15  14 15 16 17 18 19 20\n19 20 21 22 23 24 25  16 17 18 19 20 21 22  21 22 23 24 25 26 27\n26 27 28 29 30 31     23 24 25 26 27 28 29  28 29 30 31\n                      30                    \n"
+    assert_equal(expected, cal.format_year)
   end
 
 end

@@ -5,16 +5,8 @@ class CalMonth
   attr_reader :month, :year
 
   def initialize(month, year)
-    if month && year
-      @month = month
-      @year = year
-      raise ArgumentError, "#{month} was not recognized. Must be between 1..12" if month <= 0 || month > 12
-      raise ArgumentError, "Year is invalid. Please select year between 1800 and 3000." if year < 1800 || year > 3000
-    elsif month && year.nil?
-      raise ArgumentError, "Please provide a valid year."
-    else
-      raise ArgumentError, "Please provide a month and a year."
-    end
+    @month = month
+    @year = year
   end
 
   def month_header
@@ -108,6 +100,8 @@ class CalMonth
   def get_week (n)
     if format_weeks[n - 1] == nil
       " " * 20
+    # elsif format_weeks[n - 1] == 5
+    #   "                     \n"
     else
       format_weeks[n - 1]
     end
@@ -124,6 +118,5 @@ class CalMonth
       output << format_month + "\n"
     end
   end
-
 
 end

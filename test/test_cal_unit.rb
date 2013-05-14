@@ -4,34 +4,22 @@ require './cal_year'
 
 class CalIntegrationTest < Test::Unit::TestCase
 
-  def test_08_get_month
+  def test_12a_access_new_month_instance
     cal = CalMonth.new(1, 2013)
     assert_equal(1, cal.month)
   end
 
-  def test_09a_get_year
+  def test_13a_access_new_year_instance
     cal = CalMonth.new(1, 2013)
     assert_equal(2013, cal.year)
   end
 
-  def test_09b_incorrect_month_argument
-    assert_raise ArgumentError do
-    CalMonth.new(0, 2013)
-    end
-  end
-
-  def test_09c_incorrect_month_argument
-    assert_raise ArgumentError do
-    CalMonth.new(15, 2013)
-    end
-  end
-
-  def test_10_get_month_header
+  def test_14a_get_month_header
     cal = CalMonth.new(1, 2013)
     assert_equal('    January 2013', cal.month_header)
   end
 
-  def test_11_get_month_header
+  def test_15a_get_month_header
     cal = CalMonth.new(6, 2001)
     assert_equal('     June 2001', cal.month_header)
   end
