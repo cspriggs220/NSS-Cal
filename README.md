@@ -14,7 +14,14 @@
   <li>Write tests for these methods.</li>
   <li>Make them pass.</li>
 </ul>
-<ol>List of Methods used (to this point)
+<h3>Phase 3 - <em>incomplete</em></h3>
+<ul>
+  <li>Build Year class for full year integration with cal.</li>
+  <li>Write methods to use existing Month class to build the Year class.</li>
+  <li>Write the tests and make them pass.</li>
+  <li>Refactor</li>
+</ul>
+<ol>List of methods used for Month Class
   <li><b>initialize method</b></li>
   <li><b>month_header method</b></li>
   <li><b>days_header method</b></li>
@@ -28,4 +35,15 @@
   <li><b>format_weeks</b></li>
   <li><b>get_week(n)</b></li>
   <li><b>format_calendar</b></li>
+  <li><b>
 </ol>
+<ol>List of methods used for Year Class
+  <li><b>initialize method</b></li>
+  <li><b>year_header method</b></li>
+  <li><b>months_header method</b></li>
+  <li><b>format_month_header method</b></li>
+  <li><b>days_header method</b></li>
+  <li><b>create_months</b></li>
+  <li><b>format_year</b></li>
+</ol>
+

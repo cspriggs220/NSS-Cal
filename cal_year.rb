@@ -38,12 +38,16 @@ class CalYear
     all_months = (1..12).to_a.map {|month| CalMonth.new(month, @year)}
     all_months.each_slice(3) { |months|
       (1..6).each {|i| months.map {|cal_month|
+        # if cal_month.get_week(i).length
+        # if month 3 || 6 || 9 || 12,
+        # make sure they have dates,
+        # if not, add a \n at beginning
         week << cal_month.get_week(i)
         }
       }
     }
     sub = week.each_slice(3).to_a
-    sub.collect! {|w| w.join("  ") + "\n"}
+    sub.collect! {|w| w.join("  ").rstrip + "\n"}
   end
 
   def format_year

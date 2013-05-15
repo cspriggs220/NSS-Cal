@@ -98,10 +98,10 @@ class CalMonth
   end
 
   def get_week (n)
+    # make sure they have dates,
+    # if not, add a \n at beginning
     if format_weeks[n - 1] == nil
       " " * 20
-    # elsif format_weeks[n - 1] == 5
-    #   "                     \n"
     else
       format_weeks[n - 1]
     end
